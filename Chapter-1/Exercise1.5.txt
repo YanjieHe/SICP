@@ -1,0 +1,1 @@
+If a compiler uses applicative-order evaluation, the result would be 0. If it uses normal-order evaluation, the program will be in an infinite recursion. It is obvious that the function 'p' is an infinite recursion, and for applicative-order evaluation, the 'test' function will return 0 after evaluted the condition of the if clause since the function 'p' won't be called.
