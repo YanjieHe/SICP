@@ -9,7 +9,14 @@
         (else (A (- x 1)
                  (A x (- y 1))))))
 
+; 2 * n
 (define (f n) (A 0 n))
+
+; 2 ^ n
 (define (g n) (A 1 n))
+
+; 2 ^^ n, note that ^^ is the Knuth's up-arrow notation.
 (define (h n) (A 2 n))
+
+; 5 * (n ^ 2)
 (define (k n) (* 5 n n))
