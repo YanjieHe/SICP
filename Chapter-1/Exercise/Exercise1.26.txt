@@ -1,0 +1,1 @@
+Because (expmod base (/ exp 2) m) is computed by twice each time.
