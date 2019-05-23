@@ -1,6 +1,6 @@
 #lang racket
 
-(define (make-rat n d) (cons n d))
+; (define (make-rat n d) (cons n d))
 
 (define (numer x) (car x))
 
