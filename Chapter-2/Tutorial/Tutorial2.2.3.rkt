@@ -96,3 +96,12 @@
 
 (product-of-squares-of-odd-elements
  (list 1 2 3 4 5))
+
+(define n 10)
+
+(accumulate append
+            nil
+            (map (lambda (i)
+                   (map (lambda (j) (list i j))
+                        (enumerate-interval 1 (- i 1))))
+                 (enumerate-interval 1 n)))
