@@ -141,12 +141,12 @@
 ;         (angle-polar (contents z)))
 ;        (else (error "Unknown type -- ANGLE" z))))
 
-(define (add-complex z1 z2)
-  (make-from-real-imag (+ (real-part z1) (real-part z2))
-                       (+ (imag-part z1) (imag-part z2))))
+;(define (add-complex z1 z2)
+;  (make-from-real-imag (+ (real-part z1) (real-part z2))
+;                       (+ (imag-part z1) (imag-part z2))))
 
-(define (make-from-real-imag x y)
-  (make-from-real-imag-rectangular x y))
-
-(define (make-from-mag-ang r a)
-  (make-from-mag-ang-polar r a))
+;(define (make-from-real-imag x y)
+;  (make-from-real-imag-rectangular x y))
+;
+;(define (make-from-mag-ang r a)
+;  (make-from-mag-ang-polar r a))
