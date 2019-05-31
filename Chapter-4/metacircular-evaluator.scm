@@ -1,28 +1,3 @@
-#lang racket
-
-(define (cons x y)
-  (define (set-x! v) (set! x v))
-  (define (set-y! v) (set! y v))
-  (define (dispatch m)
-    (cond ((eq? m 'car) x)
-          ((eq? m 'cdr) y)
-          ((eq? m 'set-car!) set-x!)
-          ((eq? m 'set-cdr!) set-y!)
-          (else (error "Undefinied operation -- CONS" m))))
-  dispatch)
-
-(define (car z) (z 'car))
-
-(define (cdr z) (z 'cdr))
-
-(define (set-car! z new-value)
-  ((z 'set-car!) new-value)
-  z)
-
-(define (set-cdr! z new-value)
-  ((z 'set-cdr!) new-value)
-  z)
-
 (define apply-in-underlying-scheme apply)
 
 (define (eval exp env)
@@ -219,8 +194,8 @@
   (if (= (length vars) (length vals))
       (cons (make-frame vars vals) base-env)
       (if (< (length vars) (length vals))
-      (error "Too many arguments supplied" vars vals)
-      (error "Too few arguments supplied" vars vals))))
+	  (error "Too many arguments supplied" vars vals)
+	  (error "Too few arguments supplied" vars vals))))
 
 (define (lookup-variable-value var env)
   (define (env-loop env)
